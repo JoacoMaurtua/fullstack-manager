@@ -5,6 +5,7 @@ const dataBase = process.env.DB;
 const connect = async() =>{
   try{
       await mongoose.connect(dataBase,{
+        //midlewares
         useNewUrlParser: true,
         useUnifiedTopology: true
       })

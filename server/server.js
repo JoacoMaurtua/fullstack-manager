@@ -9,7 +9,7 @@ const PORT = process.env.PORT;
 const mongodb = require('./config/mongodb.config')
 mongodb();
 
-//MIDDLEWARES:
+//MIDDLEWARES PARA LAS CONSULTAS POST:
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
