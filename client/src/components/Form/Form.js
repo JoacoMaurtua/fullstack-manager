@@ -10,7 +10,7 @@ export default function Form() {
     description:''
   });
 
-  const handleOnChange =(event) =>{
+  const handleOnChange = (event) =>{
     const {name,value} = event.target;
     setFormInputs({
       ...formInputs,
@@ -18,14 +18,24 @@ export default function Form() {
     })
   }
 
-  
+  const addProduct =()=>{
+    axios.post('/api/products/new',formInputs)
+          .then(res => console.log(res))
+          .catch(err => console.log(err))
+  }
+
+  const handleOnSubmit = (event) =>{
+    event.preventDefault();
+    addProduct();
+    console.log(formInputs);
+  }
 
   const {title,price,description} = formInputs;
 
   return (
     <div className = "form-container">
       <h2>Product Manager</h2>
-      <form className = "form-container--form">
+      <form className = "form-container--form" onSubmit={handleOnSubmit}>
         <label htmlFor="title">Title</label>
         <input 
             id="title" 
