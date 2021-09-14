@@ -5,8 +5,8 @@ const dataBase = process.env.DB;
 const connectDB = async() =>{
   try{
     await mongoose.connect(dataBase,{
-      useNewUrlParser:true,
-      useUnifiedTopology:true
+      useNewUrlParser: true,
+      useUnifiedTopology: true
     });
 
     console.log(`2: Established connection whit DB`);

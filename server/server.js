@@ -14,6 +14,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 
+//RUTA PARA PRODUCTOS:
+app.use('/api',require('./routes/products.routes'));
+
 
 
 
