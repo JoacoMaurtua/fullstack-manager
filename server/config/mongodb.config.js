@@ -2,19 +2,18 @@ const mongoose = require('mongoose');
 
 const dataBase = process.env.DB;
 
-const connect = async() =>{
+const connectDB = async() =>{
   try{
-      await mongoose.connect(dataBase,{
-        //midlewares
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-      })
+    await mongoose.connect(dataBase,{
+      useNewUrlParser:true,
+      useUnifiedTopology:true
+    });
 
-      console.log(`2: Established connection with DB`)
+    console.log(`2: Established connection whit DB`);
+
   }catch(err){
-      console.error(err);
+    console.error(err);
   }
+};
 
-}
-
-module.exports = connect;
+module.exports = connectDB;

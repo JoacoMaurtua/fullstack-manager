@@ -6,7 +6,7 @@ const app = express();
 
 const PORT = process.env.PORT;
 
-const mongodb = require('./config/mongodb.config')
+const mongodb = require('./config/mongodb.config');
 mongodb();
 
 //MIDDLEWARES PARA LAS CONSULTAS POST:
