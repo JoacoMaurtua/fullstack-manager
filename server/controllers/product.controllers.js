@@ -10,7 +10,7 @@ const findProducts = (req,res) =>{
          })
 }
 
-const createProducts = (req,res) =>{
+const createProduct = (req,res) =>{
   Product.create(req.body)
         .then(results => res.json({data:results}))
         .catch(error=>{
@@ -19,4 +19,4 @@ const createProducts = (req,res) =>{
         })
 }
 
-module.exports = {findProducts,createProducts};
+module.exports = {findProducts,createProduct};

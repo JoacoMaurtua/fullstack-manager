@@ -1,1 +1,16 @@
 ###GET PRODUCTS
+
+GET http://localhost:8000/api/products
+
+###CREATE PRODUCT
+
+POST http://localhost:8000/api/products/new
+Content-Type: application/json
+
+
+{
+  "title":"PS5",
+  "price":99,
+  "description":"Last generation console sonny brand"
+}
+
