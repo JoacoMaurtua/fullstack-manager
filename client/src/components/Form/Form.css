@@ -69,5 +69,15 @@
   background-color: rgb(85, 197, 20);
   transform: translateY(3px);
   box-shadow: 10px 10px rgb(94, 93, 93);
+}
 
+.form-container p{
+  margin-top: 1.5rem;
+  color: rgb(203, 234, 255);
+  
+}
+
+.form-container p:hover{
+  font-size: 1.1rem;
+  font-weight: bold;
 }

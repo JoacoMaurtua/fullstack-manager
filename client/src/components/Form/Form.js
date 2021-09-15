@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import './Form.css';
+import {Link} from 'react-router-dom';
 /* import Swal from 'sweetalert2'; */
 
 export default function Form() {
@@ -75,6 +76,9 @@ export default function Form() {
         />
 
         <button type="submit">Create</button>
+        <Link to={`/list`} style={{textDecoration:'none'}}>
+          <p>Look at the current list!</p>
+        </Link>
       </form>
     </div>
   )

@@ -3,6 +3,7 @@ import './App.css';
 import Form from './components/Form/Form';
 import ProductList from './components/ProductList/ProductList';
 import axios from 'axios';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
   const [products,setProducts] = useState([]);
@@ -18,11 +19,20 @@ function App() {
 
   return (
     <div className="App">
-      <Form/>
-      <hr/>
-      {
-        loaded? <ProductList list={products}/>:''
-      }
+      <Router>
+        <Switch>
+          <Route path={`/`} exact>
+              <Form/>
+          </Route>
+          <Route path={`/list`}>
+            <h1>hello</h1>
+            {
+              
+              loaded? <ProductList list={products}/>:''
+            }
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
