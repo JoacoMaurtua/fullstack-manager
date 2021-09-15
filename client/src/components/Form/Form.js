@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import './Form.css';
+/* import Swal from 'sweetalert2'; */
 
 export default function Form() {
 
@@ -18,15 +19,24 @@ export default function Form() {
     })
   }
 
-  const addProduct =()=>{
+  const addProduct =()=>{ //FORMA TRADICIONAL
     axios.post('/api/products/new',formInputs)
           .then(res => console.log(res))
           .catch(err => console.log(err))
-  }
+  } 
+
+  /* const addProduct =()=>{
+    axios.post('/api/products/new',formInputs)
+        .then(res => {
+          if(res.data && res.data.data){ //1r dato-> objeto json, 2do data-> propiedad de mi objeto
+            setFormInputs()
+          } 
+        })
+  } */
 
   const handleOnSubmit = (event) =>{
     event.preventDefault();
-    addProduct();
+    addProduct(); 
     console.log(formInputs);
   }
 
