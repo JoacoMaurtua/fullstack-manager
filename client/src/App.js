@@ -4,6 +4,7 @@ import Form from './components/Form/Form';
 import ProductList from './components/ProductList/ProductList';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Detail from './components/Detail/Detail';
 
 function App() {
   const [products,setProducts] = useState([]);
@@ -25,11 +26,13 @@ function App() {
               <Form/>
           </Route>
           <Route path={`/list`}>
-            <h1>hello</h1>
+            <h1>List of products</h1>
             {
-              
               loaded? <ProductList list={products}/>:''
-            }
+            } 
+          </Route>
+          <Route path={`/list/:id`}>
+            <Detail item={products[0]}/> {/* //corregir */}
           </Route>
         </Switch>
       </Router>
