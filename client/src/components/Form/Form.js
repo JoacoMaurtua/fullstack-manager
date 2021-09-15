@@ -76,7 +76,7 @@ export default function Form() {
         />
 
         <button type="submit">Create</button>
-        <Link to={`/list`} style={{textDecoration:'none'}}>
+        <Link to={`/products`} style={{textDecoration:'none'}}>
           <p>Look at the current list!</p>
         </Link>
       </form>

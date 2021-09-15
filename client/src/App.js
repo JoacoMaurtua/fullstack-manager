@@ -13,7 +13,7 @@ function App() {
   useEffect(()=>{
     axios.get('api/products')
           .then(res => {
-            setProducts(res.data);
+            setProducts(res.data.data);
             setLoaded(true)
           });
   },[])
@@ -25,14 +25,14 @@ function App() {
           <Route path={`/`} exact>
               <Form/>
           </Route>
-          <Route path={`/list`}>
+          <Route path={`/products`}>
             <h1>List of products</h1>
             {
               loaded? <ProductList list={products}/>:''
             } 
           </Route>
-          <Route path={`/list/:id`}>
-            <Detail item={products[0]}/> {/* //corregir */}
+          <Route path={`/products/:id`}>
+            <Detail /> 
           </Route>
         </Switch>
       </Router>
