@@ -1,6 +1,6 @@
 import React, {useEffect,useState} from 'react';
 import axios from 'axios';
-import { useHistory, useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router-dom';
 
 
 export default function Detail() {
@@ -10,14 +10,14 @@ export default function Detail() {
  
 
   useEffect(()=>{
-    axios.get(`/product/${id}`)
+    axios.get(`/api/product/${id}`)
           .then(res => setProduct(res.data.data))   
   },[id]);
 
   const productPage = (event) =>{
     history.push('/products')
   }
-
+  console.log(product.title);
   return (
     <div>
       <h1>Product details</h1>
