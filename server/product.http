@@ -2,6 +2,9 @@
 
 GET http://localhost:8000/api/products
 
+###GET SINGLE PRODUCT
+GET http://localhost:8000/api/product/6140cb255597611826b98ad8
+
 ###CREATE PRODUCT
 
 POST http://localhost:8000/api/products/new
