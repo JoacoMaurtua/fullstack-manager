@@ -3,14 +3,18 @@ import './ProductList.css';
 import {Link} from 'react-router-dom';
 
 export default function ProductList({list}) {
+  console.log(list);
   return (
+
     <div>
       {
-        list.map((product,index)=>{
-          return <Link to ={`/products/${product._id}`}>
-            <p key={index}>{product.title} , <b>{product.price}</b></p>
-          </Link> /* aqui crear el link hacia el detalle de cada producto */
-        })
+        list.map((product,index)=>(
+        <div key={index}>
+          <Link to={`/products/${product._id}`}>
+            <p>{product.title} , <b>{product.price}</b></p>
+          </Link> 
+        </div>
+        ))
       }
     </div>
   )
