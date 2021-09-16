@@ -5,6 +5,7 @@ import ProductList from './components/ProductList/ProductList';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Detail from './components/Detail/Detail';
+import UpdateForm from './components/UpdateForm/UpdateForm';
 
 function App() {
   const [products,setProducts] = useState([]);
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route exact path={`/products/:id`}>
             <Detail /> {/* //corregir */}
+          </Route>
+          <Route exact path={`/products/:id/edit`}>
+            <UpdateForm/>
           </Route>
         </Switch>
       </Router>
