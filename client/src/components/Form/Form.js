@@ -4,6 +4,7 @@ import './Form.css';
 import {Link} from 'react-router-dom';
 /* import Swal from 'sweetalert2'; */
 
+
 export default function Form() {
 
   const [formInputs,setFormInputs] = useState({
@@ -80,6 +81,7 @@ export default function Form() {
           <p>Look at the current list!</p>
         </Link>
       </form>
+   
     </div>
   )
 }

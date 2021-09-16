@@ -40,3 +40,32 @@
   transform: translateY(3px);
   box-shadow: 10px 10px rgb(94, 93, 93);
 }
+
+.productList-container--list{
+  display: flex;
+  flex-direction: row;
+  margin-left: 7rem;
+}
+
+.productList-container--list div{
+  margin-top: 1.2rem;
+  margin-left: 2rem;
+  font-size: 1.2rem;
+}
+
+.productList-container--list div .icon{
+  cursor: pointer;
+  transform: scale(0.87);
+}
+
+.productList-container--list div .icon:hover{
+  transform: scale(0.90);
+  font-size: 1.4rem;
+  transition: all .3s ease-in-out;
+
+}
+
+.productList-container--list div .trash{
+  margin-left: .8rem;
+  color: rgb(148, 3, 3);
+}

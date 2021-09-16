@@ -23,7 +23,7 @@ export default function UpdateForm() {
   }
 
   const handleOnSubmit =event=>{
-    event.preventDefaulta();
+    event.preventDefault();
     updateProduct();
   }
 
