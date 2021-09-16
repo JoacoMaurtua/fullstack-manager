@@ -1,6 +1,7 @@
 import React, {useEffect,useState} from 'react';
 import axios from 'axios';
 import { useHistory, useParams } from 'react-router-dom';
+import './Detail.css';
 
 
 export default function Detail() {
@@ -19,7 +20,7 @@ export default function Detail() {
   }
   console.log(product.title);
   return (
-    <div>
+    <div className="detail-section">
       <h1>Product details</h1>
       <p>Nombre: {product.title}</p>
       <p>Price: {product.price}</p>

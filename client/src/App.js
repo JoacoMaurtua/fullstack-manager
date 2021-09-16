@@ -26,7 +26,6 @@ function App() {
               <Form/>
           </Route>
           <Route exact path={`/products`}>
-            <h1>List of products</h1>
             {
               loaded? <ProductList list={products}/>:''
             } 

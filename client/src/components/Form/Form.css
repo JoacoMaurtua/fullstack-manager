@@ -81,4 +81,6 @@
 .form-container p:hover{
   font-size: 1.1rem;
   font-weight: bold;
+  transition: all 0.4s ease-out
+  
 }

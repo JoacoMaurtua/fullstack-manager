@@ -1,0 +1,41 @@
+.detail-section{
+  font-family:Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  background-color: rgb(138, 138, 138);
+  padding-bottom: 3rem;
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-radius: 8px;
+  box-shadow: 8px 8px 8px 7px rgba(0, 0, 0, 0.2);
+  margin-bottom: 5rem;
+}
+
+.detail-section h1{
+  color: aliceblue;
+  font-size: 2.2rem;
+}
+
+.detail-section p{
+  margin-top: 1.5rem;
+  color: white;
+}
+
+.detail-section button{
+  outline: none;
+  border: none;
+  background-color: rgb(46, 124, 9);
+  color: white;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .4s ease-in-out;
+}
+
+.detail-section button:hover{
+  background-color: rgb(85, 197, 20);
+  transform: translateY(3px);
+  box-shadow: 10px 10px rgb(94, 93, 93);
+}

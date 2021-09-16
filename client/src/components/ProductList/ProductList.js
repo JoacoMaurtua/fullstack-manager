@@ -11,12 +11,13 @@ export default function ProductList({list}) {
   }
 
   return (
-    <div>
+    <div className="productList-container">
+      <h1>List of products</h1>
       {
         list.map((product,index)=>(
-        <div key={index}>
-          <Link to={`/products/${product._id}`}>
-            <p>{product.title} , <b>{product.price}</b></p>
+        <div className="productList-container--list" key={index}>
+          <Link to={`/products/${product._id}`} style={{textDecoration:'none'}}>
+            <p>{product.title} , <b>{product.price}$</b></p>
           </Link> 
         </div>
         ))
