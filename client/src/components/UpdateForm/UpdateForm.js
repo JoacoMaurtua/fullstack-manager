@@ -18,7 +18,7 @@ export default function UpdateForm() {
   },[id]); //traer el producto seleccionado
 
   const updateProduct = () =>{
-    axios.put(`/api/product/${id}`,formInputs)
+    axios.put(`/api/products/update/${id}`,formInputs)
          .then(res => console.log(res));
   }
 

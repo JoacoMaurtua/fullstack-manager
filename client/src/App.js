@@ -28,7 +28,7 @@ function App() {
           </Route>
           <Route exact path={`/products`}>
             {
-              loaded? <ProductList list={products}/>:''
+              loaded? <ProductList list={products} setList = {setProducts}/>:''
             } 
           </Route>
           <Route exact path={`/products/:id`}>
