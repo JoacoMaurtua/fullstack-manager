@@ -16,3 +16,16 @@ Content-Type: application/json
   "description":"Last generation console sonny brand"
 }
 
+###UPDATE PRODUCT
+PUT http://localhost:8000/api/products/update/61402052a22e662eaad4433c
+Content-Type: application/json
+
+{
+  "title":"PS5",
+  "price":489,
+  "description":"Last generation console sonny brand"
+
+}
+
+###DELETE PRODUCT
+DELETE http://localhost:8000/api/products/delete/6142735bee4b0cc4cf6f8336

@@ -30,4 +30,24 @@ const createProduct = (req,res) =>{
         })
 }
 
-module.exports = {findProducts, findSingleProduct, createProduct};
+//Actualizar un producto en la db
+const updateProduct = (req,res) =>{
+  Product.findOneAndUpdate({_id:req.params.id}, req.body, {new:true})
+         .then(result => res.json({data:result}))
+         .catch(error=>{
+           res.json({error:error, message:'Could not update product'})
+           res.sendStatus(500);
+         })
+}
+
+//Eliminar un producto de la db
+const deleteProduct =(req,res) =>{
+  Product.deleteOne({_id:req.params.id})
+         .then(result => res.json({data:result}))
+         .catch(error=>{
+           res.json({error:error, message:'Could not delete product'});
+           res.sendStatus(202);
+         })
+}
+
+module.exports = {findProducts, findSingleProduct, createProduct, updateProduct, deleteProduct};
