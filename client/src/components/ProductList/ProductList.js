@@ -15,11 +15,11 @@ export default function ProductList({list}) {
       <h1>List of products</h1>
       {
         list.map((product,index)=>(
-        <div className="productList-container--list" key={index}>
+        <section className="productList-container--list" key={index}>
           <Link to={`/products/${product._id}`} style={{textDecoration:'none'}}>
             <p>{product.title} , <b>{product.price}$</b></p>
           </Link> 
-        </div>
+        </section>
         ))
       }
       <button onClick={event => productPage(event)}>Go Back</button>
