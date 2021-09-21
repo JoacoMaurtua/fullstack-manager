@@ -1,12 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import './Form.css';
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 /* import Swal from 'sweetalert2'; */
 
 
-export default function Form() {
 
+export default function Form({create,update}) {
+  const {id} = useParams();
   const [formInputs,setFormInputs] = useState({
     title:'',
     price:'',
@@ -21,32 +22,43 @@ export default function Form() {
     })
   }
 
-  const addProduct =()=>{ //FORMA TRADICIONAL
+  const addProducts =()=>{ //FORMA TRADICIONAL
     axios.post('/api/products/new',formInputs)
           .then(res => console.log(res))
           .catch(err => console.log(err))
   } 
 
-  /* const addProduct =()=>{
-    axios.post('/api/products/new',formInputs)
-        .then(res => {
-          if(res.data && res.data.data){ //1r dato-> objeto json, 2do data-> propiedad de mi objeto
-            setFormInputs()
-          } 
-        })
-  } */
+  useEffect(()=>{
+    if(id){
+      axios.get(`/api/product/${id}`)
+      .then(res => setFormInputs(res.data.data))  
+    }
+     
+  },[id]); //traer el producto seleccionado
 
+  const updateProduct = () =>{
+    axios.put(`/api/products/update/${id}`,formInputs)
+         .then(res => console.log(res));
+  }
+
+  
   const handleOnSubmit = (event) =>{
     event.preventDefault();
-    addProduct(); 
-    console.log(formInputs);
+    if(id){
+      updateProduct();
+    }else{
+      addProducts();
+    }
   }
 
   const {title,price,description} = formInputs;
 
   return (
     <div className = "form-container">
-      <h2>Product Manager</h2>
+      {
+        create?<h2>Create Products</h2>:update?<h2>Update Products</h2>:''
+      }
+      
       <form className = "form-container--form" onSubmit={handleOnSubmit}>
         <label htmlFor="title">Title</label>
         <input 
@@ -75,8 +87,13 @@ export default function Form() {
             value={description}
             onChange = {handleOnChange}
         />
+        {
+          create? <button type="submit">Create</button>:''
+        }
+        {
+          update? <button type="submit">Update</button>:''
+        }
 
-        <button type="submit">Create</button>
         <Link to={`/products`} style={{textDecoration:'none'}}>
           <p>Look at the current list!</p>
         </Link>
